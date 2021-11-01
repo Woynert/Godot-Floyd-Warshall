@@ -1,0 +1,106 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://node.tscn" type="PackedScene" id=1]
+[ext_resource path="res://NodesCon.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Scene" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -2.0
+margin_right = 1026.0
+margin_bottom = 605.0
+color = Color( 0.309804, 0.376471, 0.419608, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Nodes" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Decoration" type="Node2D" parent="Nodes"]
+
+[node name="Label" type="Label" parent="Nodes/Decoration"]
+margin_left = 13.905
+margin_top = 8.35246
+margin_right = 279.905
+margin_bottom = 56.3525
+text = "WHAYNER EDUARDO PORRAS RODRIGUEZ
+UNIVERSIDAD PONTIFICIA BOLIVARIANA
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RayCast" type="RayCast2D" parent="Nodes"]
+position = Vector2( 98.1945, 190.169 )
+enabled = true
+cast_to = Vector2( 200, -127 )
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="container" type="Node2D" parent="Nodes"]
+
+[node name="Node2D" parent="Nodes/container" instance=ExtResource( 1 )]
+position = Vector2( 95.6628, 318.486 )
+
+[node name="Node2D5" parent="Nodes/container" instance=ExtResource( 1 )]
+position = Vector2( 345.836, 279.289 )
+
+[node name="Node2D4" parent="Nodes/container" instance=ExtResource( 1 )]
+position = Vector2( 439.368, 30.6333 )
+
+[node name="Node2D6" parent="Nodes/container" instance=ExtResource( 1 )]
+position = Vector2( 432.337, 550.08 )
+
+[node name="Node2D2" parent="Nodes/container" instance=ExtResource( 1 )]
+position = Vector2( 737.329, 91.4031 )
+
+[node name="Node2D7" parent="Nodes/container" instance=ExtResource( 1 )]
+position = Vector2( 842.291, 529.717 )
+
+[node name="Node2D3" parent="Nodes/container" instance=ExtResource( 1 )]
+position = Vector2( 929.18, 288.269 )
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Walls"]
+position = Vector2( 493.182, 282.299 )
+scale = Vector2( 2, 19.56 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D"]
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Area2D/CollisionShape2D"]
+margin_left = -10.0
+margin_top = -10.0
+margin_right = 10.0
+margin_bottom = 10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D2" type="Area2D" parent="Walls"]
+position = Vector2( 1040.94, 402.403 )
+rotation = 1.5708
+scale = Vector2( 2, 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D2"]
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Area2D2/CollisionShape2D"]
+margin_left = -10.0
+margin_top = -10.0
+margin_right = 10.0
+margin_bottom = 10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
